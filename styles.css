@@ -1,0 +1,131 @@
+/* Custom CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* End of Custom CSS Reset */
+
+/* 
+1. Background 
+2. Surface
+3. Primary
+4. Secondary
+5. On background
+6. On Surface
+7. On Primary
+8. On Secondary */
+
+:root {
+  --font-fam: "Poppins", sans-serif;
+  --font-w-normal: 400;
+  --font-w-bold: 700;
+  --img-bg: url("");
+  --background: hsl(150, 44%, 94%);
+  --surface: hsl(0, 0%, 100%);
+  --primary: hsl(33, 100%, 52%);
+  --primary-alt: hsl(18, 91%, 55%);
+  --secondary: hsl(0, 91%, 43%);
+  --secondary-alt: hsl(0, 78%, 35%);
+  --on-background: hsl(0, 0%, 0%);
+  --on-surface: hsl(0, 0%, 0%);
+  --on-primary: hsl(0, 0%, 100%);
+  --on-secondary: hsl(0, 0%, 100%);
+  --drop-shadow: hsl(208, 38%, 85%);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/poppins-v20-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/poppins-v20-latin-700.woff2") format("woff2");
+}
+
+body {
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-fam);
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 24px;
+  height: 40px;
+  background-color: var(--primary);
+  border-bottom: 4px solid var(--primary-alt);
+  filter: drop-shadow(2px 5px 3px var(--drop-shadow));
+}
+
+a {
+  text-decoration: none;
+  color: var(--on-primary);
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.splash-image {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 10px solid var(--primary);
+  outline: 5px solid var(--background);
+  outline-offset: -15px;
+  filter: drop-shadow(2px 5px 3px var(--drop-shadow));
+}
